@@ -1,15 +1,17 @@
-// === Dynamic Typing Effect ===
+// =========================
+// DYNAMIC TYPING EFFECT
+// =========================
 const typedTextSpan = document.querySelector("#typed-text");
-const textArray = ["Aspiring AI/ML Engineer", "Machine Learning Practitioner", "Data Scientist", "Problem Solver"]; // Your phrases
-const typingDelay = 100; // Milliseconds per character
-const erasingDelay = 50; // Milliseconds per character
-const newTextDelay = 2000; // Delay before typing new text (milliseconds)
+const textArray = ["Aspiring AI/ML Engineer", "Machine Learning Practitioner", "Data Scientist", "Problem Solver"];
+const typingDelay = 100;
+const erasingDelay = 50;
+const newTextDelay = 2000;
 let textArrayIndex = 0;
 let charIndex = 0;
 
 function type() {
     if (charIndex < textArray[textArrayIndex].length) {
-        if(!typedTextSpan.classList.contains("typing")) typedTextSpan.classList.add("typing");
+        if (!typedTextSpan.classList.contains("typing")) typedTextSpan.classList.add("typing");
         typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
         charIndex++;
         setTimeout(type, typingDelay);
@@ -21,63 +23,87 @@ function type() {
 
 function erase() {
     if (charIndex > 0) {
-        if(!typedTextSpan.classList.contains("erasing")) typedTextSpan.classList.add("erasing");
+        if (!typedTextSpan.classList.contains("erasing")) typedTextSpan.classList.add("erasing");
         typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
         charIndex--;
         setTimeout(erase, erasingDelay);
     } else {
         typedTextSpan.classList.remove("erasing");
-        textArrayIndex++;
-        if(textArrayIndex >= textArray.length) textArrayIndex = 0;
-        setTimeout(type, typingDelay + 1100); // Delay before typing next phrase
+        textArrayIndex = (textArrayIndex + 1) % textArray.length;
+        setTimeout(type, typingDelay + 1100);
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Only start typing effect if the element exists
-    if (typedTextSpan) {
-        setTimeout(type, newTextDelay + 250);
+// =========================
+// DARK/LIGHT MODE TOGGLE
+// =========================
+const themeToggle = document.getElementById("theme-toggle");
+const body = document.body;
+
+// Detect system preference
+const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+// Load saved theme or fallback to system
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) body.className = savedTheme;
+else body.className = prefersDark ? "dark-mode" : "light-mode";
+
+// Update toggle icon
+function updateIcon() {
+    if (body.classList.contains("dark-mode")) themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    else themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+}
+updateIcon();
+
+themeToggle.addEventListener("click", () => {
+    if (body.classList.contains("dark-mode")) {
+        body.classList.replace("dark-mode", "light-mode");
+        localStorage.setItem("theme", "light-mode");
+    } else {
+        body.classList.replace("light-mode", "dark-mode");
+        localStorage.setItem("theme", "dark-mode");
     }
+    updateIcon();
 });
 
-// === Smooth Scrolling for Navigation (Optional - if not already handled by CSS scroll-behavior) ===
+// =========================
+// FADE-IN SECTIONS ON SCROLL
+// =========================
+const sections = document.querySelectorAll("section");
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add("visible");
+        });
+    },
+    { threshold: 0.1 }
+);
+sections.forEach(section => observer.observe(section));
+
+// =========================
+// SMOOTH SCROLL NAVIGATION
+// =========================
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
     });
 });
 
-// === Sticky Navigation (Optional - A more robust way using JS) ===
+// =========================
+// STICKY NAVIGATION
+// =========================
 const header = document.querySelector("header");
-const navOffset = header.offsetTop; // Get initial offset of the header
-
+const navOffset = header.offsetTop;
 function stickyNav() {
-    if (window.pageYOffset > navOffset) {
-        header.classList.add("sticky");
-    } else {
-        header.classList.remove("sticky");
-    }
+    if (window.pageYOffset > navOffset) header.classList.add("sticky");
+    else header.classList.remove("sticky");
 }
 window.addEventListener("scroll", stickyNav);
 
-// Add CSS for .sticky class if you use the sticky nav JS
-/*
-// In your styles.css
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    animation: slideDown 0.3s ease-out;
-}
-
-@keyframes slideDown {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(0); }
-}
-*/
+// =========================
+// INITIALIZE TYPING EFFECT
+// =========================
+document.addEventListener("DOMContentLoaded", function() {
+    if (typedTextSpan) setTimeout(type, newTextDelay + 250);
+});

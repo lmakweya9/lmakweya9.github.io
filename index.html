@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lesego Makweya - Portfolio</title>
+    <meta name="description" content="Lesego Makweya - Junior Full-Stack / Software Developer Portfolio. Projects, Skills, AI/ML Interests, Contact.">
+    <meta name="keywords" content="Lesego Makweya, Portfolio, Full-Stack Developer, Software Developer, Python, JavaScript, React, AI, ML, Machine Learning, Projects">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,9 +18,10 @@
 </head>
 <body>
 
+    <!-- Header / Navigation -->
     <header>
         <div class="container">
-            <nav>
+            <nav class="nav-bar">
                 <ul>
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -26,12 +29,16 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <button id="theme-toggle" aria-label="Toggle Dark Mode" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
             </nav>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="hero" class="container">
-        <img src="https://lmakweya9.github.io/img/profile.jpg" alt="Lesego Makweya Profile Picture">
+        <img src="img/profile.jpg" alt="Portrait of Lesego Makweya, Software Developer">
         <h1>Hi, I'm Lesego Makweya 👋</h1>
         <p>
             <span id="typed-text"></span><span class="blinking-cursor">|</span>
@@ -42,15 +49,26 @@
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="container">
         <h2>About Me</h2>
-        <p>I am an **industrious educator** with a proven track record of facilitating learning and fostering student success, particularly in technical subjects. My journey into technology has been driven by a deep-seated passion for **problem-solving** and an evolving fascination with the transformative power of **Artificial Intelligence and Machine Learning**.</p>
-        <p>Through my **Software Engineering** education at WeThinkCode, I've built a strong foundation in core computer science principles, including **Data Structures and Algorithms** and **Object-Oriented Programming**. My experience with **Python** in projects like web scraping further fuels my enthusiasm for leveraging data-driven solutions.</p>
-        <p>I am particularly eager to apply my analytical and technical skills in the dynamic field of AI/ML. My goal is to contribute to innovative projects that push the boundaries of technology, and I am keen to embark on this next chapter with a forward-thinking organization like **CAPACITI**.</p>
-        <p>I thrive in collaborative environments that champion continuous learning and practical application of knowledge. Whether it's crafting clean code or optimizing complex systems, I'm always looking for impactful ways to contribute and grow.</p>
-        <p>For a detailed overview of my professional journey, please refer to my <a href="https://lmakweya9.github.io/Lesego%20CV.docx" target="_blank">CV (Download)</a>.</p>
+        <p>I’m <strong>Lesego Makweya</strong>, a Junior Full-Stack / Software Developer based in Pretoria, South Africa. I specialize in building <strong>web applications, client websites, and data-driven systems</strong>, with hands-on experience in <strong>Python, JavaScript, React</strong>, and backend integration. I’m passionate about creating <strong>clean, efficient, and maintainable solutions</strong>, and I leverage AI-assisted tools to improve development workflows and productivity.</p>
+        
+        <p>In professional settings, I’ve worked as a <strong>Web Developer & Technical Administrator at XCORE Solutions</strong>, building and maintaining multiple client websites, integrating custom functionality, and optimizing performance for responsive, user-friendly experiences. I’ve also taught coding and mentored students, enhancing my ability to communicate technical concepts clearly.</p>
+
+        <p>Some of my key projects include:</p>
+        <ul>
+            <li><strong>Mini Task Manager (Python)</strong> – Desktop app with CRUD features and persistent storage demonstrating OOP and modular programming. <a href="https://github.com/lmakweya9/mini-task-manager" target="_blank">GitHub</a></li>
+            <li><strong>Math Expression Evaluator (Python)</strong> – Professional-grade calculator with variable state management, complex expression parsing, and CI/CD integration. <a href="https://github.com/lmakweya9/math-expression-evaluator" target="_blank">GitHub</a></li>
+            <li><strong>FairCV-Match (Machine Learning Project)</strong> – Interpretable NLP tool for matching CVs to job descriptions, trained with scikit-learn. <a href="https://github.com/lmakweya9/faircv-match" target="_blank">GitHub</a></li>
+        </ul>
+
+        <p>I’m particularly interested in <strong>AI/ML, full-stack development, and data-driven solutions</strong>, and I thrive in environments that encourage continuous learning, collaboration, and practical problem-solving. I’m eager to contribute to <strong>innovative projects</strong> and grow as a developer.</p>
+
+        <p>For a detailed overview of my experience and skills, please view my <a href="https://lmakweya9.github.io/Lesego%20CV.docx" target="_blank">CV (Download)</a>.</p>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills" class="container">
         <h2>Skills</h2>
         <div class="skills-grid">
@@ -94,49 +112,35 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="container">
         <h2>Projects</h2>
         <div class="project-grid">
             <div class="project-card">
-                <h3>Smart Health Assistant</h3>
-                <p>An AI-powered system for managing health data, providing medical insights, and offering healthcare decision support to improve well-being.</p>
+                <h3>Mini Task Manager</h3>
+                <p>Desktop-based task manager with CRUD functionality and persistent storage, demonstrating modular design and clean Python code.</p>
                 <div class="project-links">
-                    <a href="projects/smart-health-assistant.html" class="button">View Details</a>
-                    <a href="https://smart-health-assistant-68gx.onrender.com/" target="_blank" class="button">View Live Demo</a>
+                    <a href="https://github.com/lmakweya9/mini-task-manager" target="_blank" class="button">View on GitHub</a>
                 </div>
             </div>
             <div class="project-card">
-                <h3>AI Assistant</h3>
-                <p>An intelligent digital helper designed to automate routine tasks and deliver quick, accurate responses, improving efficiency and user experience.</p>
+                <h3>Math Expression Evaluator</h3>
+                <p>Professional-grade scientific calculator with variable state management, complex parsing, and robust error handling.</p>
                 <div class="project-links">
-                    <a href="projects/ai-assistant.html" class="button">View Details</a>
-                    <a href="https://www.figma.com/proto/VN770C94GPRfo7zsD96Dj1/EduTech--Community-?node-id=1-2&t=SB0g2RDZC26v0dyC-1&starting-point-node-id=1%3A2" target="_blank" class="button">View Design on Figma</a>
+                    <a href="https://github.com/lmakweya9/math-expression-evaluator" target="_blank" class="button">View on GitHub</a>
                 </div>
             </div>
             <div class="project-card">
-                <h3>Weather App</h3>
-                <p>A simple web application that fetches and displays current weather data for a given city/town using a public API.</p>
+                <h3>FairCV-Match</h3>
+                <p>Interpretable NLP tool for matching CVs to job descriptions, built using scikit-learn with performance and fairness visualizations.</p>
                 <div class="project-links">
-                    <a href="https://github.com/lmakweya9/weather-app" target="_blank" class="button">View on GitHub</a>
-                    </div>
-            </div>
-            <div class="project-card">
-                <h3>To-Do List (React)</h3>
-                <p>A dynamic and interactive To-Do list application built with React, featuring adding, editing, and deleting tasks.</p>
-                <div class="project-links">
-                    <a href="https://github.com/lmakweya9/react-todo-list" target="_blank" class="button">View on GitHub</a>
-                    </div>
-            </div>
-            <div class="project-card">
-                <h3>Simple Web Scraper</h3>
-                <p>A Python-based web scraper using BeautifulSoup to extract data from target websites, demonstrating data parsing and retrieval skills.</p>
-                <div class="project-links">
-                    <a href="https://github.com/lmakweya9/Python-web-scraper" target="_blank" class="button">View on GitHub</a>
-                    </div>
+                    <a href="https://github.com/lmakweya9/faircv-match" target="_blank" class="button">View on GitHub</a>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="container">
         <h2>Get in Touch</h2>
         <div class="contact-content">
@@ -149,7 +153,8 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="_replyto" required> </div>
+                    <input type="email" id="email" name="_replyto" required>
+                </div>
                 <div class="form-group">
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" rows="6" required></textarea>
@@ -160,17 +165,16 @@
             <div class="social-links contact-social-links">
                 <a href="https://linkedin.com/in/lesego-makweya-5777a11b3/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/lmakweya9" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                </div>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Lesego Makweya. All rights reserved.</p>
+            <p>&copy; 2026 Lesego Makweya. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
-
 </body>
 </html>

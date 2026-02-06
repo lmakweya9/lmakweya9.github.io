@@ -1,704 +1,389 @@
-/* css/style.css - Modern & Tech-Inspired Portfolio Styles */
-
-/* --- Root Variables for Easy Customization --- */
+/* =========================
+   VARIABLES & THEME
+========================= */
 :root {
-    /* Modern Tech Dark Mode Palette */
-    --primary-color: #00BFFF; /* Deep Sky Blue for main accents, links, and buttons */
-    --secondary-color: #F1C40F; /* Bright Yellow for headings and secondary highlights */
-    --accent-color: #FF6B6B; /* Coral Red for other subtle highlights if needed */
-
-    --text-color: #E0E0E0; /* Light Gray for main body text, readable on dark backgrounds */
-    --light-text-color: #A0A0A0; /* Slightly darker gray for secondary text */
-    --white-text: #FFFFFF; /* Pure white for important text if desired */
-
-    --background-light: #121212; /* Very dark gray/black for main background */
-    --background-dark: #1F1F1F; /* Slightly lighter dark gray for alternating sections */
-    --card-background: #1A1A1A; /* Darker gray for project cards and skill boxes */
-    --border-color: #333333; /* Darker border for separation */
-
-    --button-bg-color: var(--primary-color);
-    --button-text-color: #121212; /* Dark text for bright buttons */
-
-    /* Fonts (Rajdhani for headings, Inter for body) */
-    --font-family-body: 'Inter', sans-serif;
-    --font-family-heading: 'Rajdhani', sans-serif;
-
-    --spacing-unit: 1rem; /* Base unit for padding/margins */
+    --color-bg: #0f172a;
+    --color-card: #020617;
+    --color-text: #e5e7eb;
+    --color-text-muted: #9ca3af;
+    --color-accent: #38bdf8;
+    --color-button-start: #38bdf8;
+    --color-button-end: #6366f1;
+    --shadow-card: 0 20px 50px rgba(0,0,0,0.5);
+    --shadow-hover: 0 25px 60px rgba(56,189,248,0.25);
+    --transition: all 0.3s ease;
 }
 
-/* --- Global Styles & Resets --- */
+body.light-mode {
+    --color-bg: #f9fafb;
+    --color-card: #ffffff;
+    --color-text: #111827;
+    --color-text-muted: #6b7280;
+    --color-accent: #3b82f6;
+    --color-button-start: #3b82f6;
+    --color-button-end: #6366f1;
+    --shadow-card: 0 15px 40px rgba(0,0,0,0.15);
+    --shadow-hover: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+body.dark-mode {
+    --color-bg: #0f172a;
+    --color-card: rgba(2,6,23,0.8);
+    --color-text: #e5e7eb;
+    --color-text-muted: #d1d5db;
+    --color-accent: #38bdf8;
+    --color-button-start: #38bdf8;
+    --color-button-end: #6366f1;
+    --shadow-card: 0 20px 50px rgba(0,0,0,0.5);
+    --shadow-hover: 0 25px 60px rgba(56,189,248,0.25);
+}
+
+/* =========================
+   RESET & BASE
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: var(--font-family-body);
-    margin: 0;
-    padding: 0;
-    /* Background color is now handled by pseudo-elements, set to transparent */
-    background-color: transparent;
-    color: var(--text-color); /* Default text color from variables */
-    line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scroll for the main body */
-    min-height: 100vh; /* Ensure body takes full viewport height */
-    display: flex;
-    flex-direction: column;
-    position: relative; /* Needed for z-index context with fixed pseudo-elements */
+    font-family: "Inter", sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+    transition: var(--transition);
 }
 
-/* Blurred Background Image (REPLACE URL with your actual image path!) */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* !!! REPLACE THIS URL with the actual path to your image (e.g., 'https://lmakweya9.github.io/img/robotics-ml-bg.jpg') !!! */
-    background-image: url('https://lmakweya9.github.io/img/pexels-markusspiske-1089438.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(8px); /* Adjust blur strength as needed */
-    -webkit-filter: blur(8px); /* For better browser compatibility */
-    transform: scale(1.02); /* To hide blur edges */
-    z-index: -2; /* Keep it behind everything else */
+/* =========================
+   GLOBAL
+========================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* Semi-transparent Overlay for Readability */
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(18, 18, 18, 0.85); /* Dark overlay matching background-light, adjust opacity */
-    z-index: -1; /* Above the blurred image, below content */
+h1, h2, h3 {
+    font-family: "Rajdhani", sans-serif;
+    letter-spacing: 1px;
+    transition: var(--transition);
 }
 
-/* Ensure content is above the overlay */
-header, section, footer {
-    position: relative;
-    z-index: 1;
+h2 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    color: var(--color-accent);
 }
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-family-heading);
-    color: var(--secondary-color); /* Bright Yellow for headings */
-    margin-top: 2rem;
-    margin-bottom: var(--spacing-unit);
-    line-height: 1.2;
-}
-
-h1 { font-size: 2.8rem; }
-h2 { font-size: 2.2rem; }
-h3 { font-size: 1.8rem; }
-p { margin-bottom: var(--spacing-unit); }
 
 a {
-    color: var(--primary-color); /* Deep Sky Blue for links */
     text-decoration: none;
-    transition: color 0.3s ease;
-}
-a:hover {
-    color: var(--secondary-color); /* Bright Yellow on hover */
-    text-decoration: underline;
+    color: inherit;
 }
 
-/* --- Utility Classes --- */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+.button {
+    background: linear-gradient(135deg, var(--color-button-start), var(--color-button-end));
+    padding: 10px 22px;
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
 }
 
-/* --- Header & Navigation --- */
+.button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+}
+
+/* =========================
+   HEADER / NAV
+========================= */
 header {
-    background-color: var(--background-dark); /* Dark background for header */
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Stronger shadow for dark mode */
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+nav.nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    justify-content: center; /* Center nav items */
+    justify-content: center;
+    list-style: none;
+    padding: 1.2rem 0;
     gap: 2rem;
 }
 
-nav ul li a {
-    color: var(--text-color); /* Light grey for nav links */
-    font-weight: bold;
-    font-family: var(--font-family-heading);
-    padding: 0.5rem 0;
+nav a {
+    font-weight: 600;
     position: relative;
+    transition: var(--transition);
 }
 
-nav ul li a::after {
-    content: '';
+nav a::after {
+    content: "";
     position: absolute;
-    width: 0;
+    width: 0%;
     height: 2px;
-    display: block;
-    margin-top: 5px;
-    right: 0;
-    background: var(--primary-color); /* Deep Sky Blue underline */
-    transition: width 0.3s ease;
-    -webkit-transition: width 0.3s ease;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
+    bottom: -5px;
     left: 0;
-    background: var(--primary-color);
+    background: var(--color-accent);
+    transition: var(--transition);
 }
 
-/* Sticky Navigation (CSS for the JS functionality) */
-.sticky {
-    position: fixed;
-    top: 0;
+nav a:hover::after {
     width: 100%;
-    z-index: 1000;
-    background-color: var(--background-dark); /* Match header background */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Stronger shadow */
-    animation: slideDown 0.3s ease-out;
 }
 
-@keyframes slideDown {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(0); }
+/* =========================
+   THEME TOGGLE BUTTON
+========================= */
+.theme-btn {
+    background: none;
+    border: 2px solid var(--color-accent);
+    border-radius: 50%;
+    padding: 8px 10px;
+    cursor: pointer;
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    margin-left: 1rem;
 }
 
-/* --- Hero Section --- */
+.theme-btn:hover {
+    background: var(--color-accent);
+    color: var(--color-bg);
+    transform: scale(1.1);
+}
+
+/* =========================
+   HERO
+========================= */
 #hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 4rem 1.5rem;
-    background-color: transparent; /* Overlay handles background */
-    border-bottom: 1px solid var(--border-color); /* Darker border */
-    position: relative;
-    overflow: hidden;
+    gap: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+#hero.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #hero img {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--primary-color); /* Deep Sky Blue border */
-    box-shadow: 0 0 15px rgba(0,0,0,0.4); /* Stronger shadow */
-    margin-bottom: 1.5rem;
+    border-radius: 50%;
+    border: 4px solid var(--color-accent);
+    box-shadow: 0 0 30px rgba(56,189,248,0.6);
+    transition: var(--transition);
 }
 
 #hero h1 {
-    font-size: 3.5rem;
-    color: var(--secondary-color); /* Bright Yellow for H1 */
-    margin-bottom: 0.5rem;
-    /* Fade-in animation for H1 */
-    opacity: 0; /* Start invisible */
-    transform: translateY(20px); /* Start slightly below */
-    animation: fadeInSlideUp 1.2s ease-out forwards; /* Apply animation */
-    animation-delay: 0.5s; /* Delay before it starts */
-}
-
-/* Keyframes for H1 fade-in animation */
-@keyframes fadeInSlideUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    font-size: 2.8rem;
 }
 
 #hero p {
-    font-size: 1.25rem;
-    color: var(--text-color); /* Light gray for hero text */
-    max-width: 800px;
-    margin: 0 auto 2rem;
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
 }
 
 .social-links a {
-    display: inline-block;
-    background-color: var(--primary-color); /* Deep Sky Blue button */
-    color: var(--button-text-color); /* Dark text on button */
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    font-weight: bold;
-    margin: 0 0.5rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    color: var(--color-accent);
+    transition: var(--transition);
 }
 
 .social-links a:hover {
-    background-color: var(--secondary-color); /* Bright Yellow on hover */
-    transform: translateY(-3px);
-    text-decoration: none;
+    color: #818cf8;
 }
 
-/* Typing Effect Cursor */
-.blinking-cursor {
-    font-weight: 100;
-    font-size: 1.25em; /* Adjust to match your hero text size */
-    color: var(--primary-color); /* Deep Sky Blue cursor */
-    -webkit-animation: 1s blink step-end infinite;
-    -moz-animation: 1s blink step-end infinite;
-    -ms-animation: 1s blink step-end infinite;
-    -o-animation: 1s blink step-end infinite;
-    animation: 1s blink step-end infinite;
-}
-
-@keyframes blink {
-    from, to { opacity: 0; }
-    50% { opacity: 1; }
-}
-@-webkit-keyframes blink {
-    from, to { opacity: 0; }
-    50% { opacity: 1; }
-}
-
-
-/* --- General Section Styles --- */
+/* =========================
+   SECTIONS (About, Skills, Projects, Contact)
+========================= */
 section {
-    padding: 4rem 1.5rem;
-    text-align: center;
+    padding: 5rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
 }
 
-section:nth-of-type(odd) {
-    background-color: var(--background-light); /* Dark background */
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-section:nth-of-type(even) {
-    background-color: var(--background-dark); /* Slightly lighter dark background */
+/* =========================
+   SKILLS
+========================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
 }
 
-section h2 {
-    margin-bottom: 2.5rem;
-    position: relative;
-    display: inline-block;
+.skills-category {
+    background: var(--color-card);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
 }
 
-section h2::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: var(--primary-color); /* Deep Sky Blue underline */
-    margin: 0.75rem auto 0;
+.skills-category:hover {
+    transform: translateY(-8px);
 }
 
-/* --- About Me Section --- */
-#about p {
-    max-width: 800px;
-    margin: 0 auto 1rem;
-    font-size: 1.1rem;
-    color: var(--text-color); /* Light gray text */
-    text-align: left;
-}
-#about strong {
-    color: var(--primary-color); /* Deep Sky Blue for strong text */
-}
-
-/* --- Skills Section --- */
-#skills .skills-category {
-    background-color: var(--card-background); /* Darker gray for skill boxes */
-    border: 1px solid var(--border-color); /* Darker border */
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Stronger shadow */
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    /* Removed horizontal scrolling for skill items within each category */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    white-space: normal; /* Allow text wrapping */
-}
-
-#skills .skills-category:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5); /* Even stronger hover shadow */
-}
-
-#skills .skills-category h3 {
-    color: var(--primary-color); /* Deep Sky Blue for skill category headings */
-    margin-top: 0;
+.skills-category h3 {
+    color: var(--color-accent);
     margin-bottom: 1rem;
-    font-size: 1.5rem;
-    border-bottom: 2px solid var(--border-color); /* Darker border */
-    padding-bottom: 0.5rem;
-    white-space: normal; /* Allow heading to wrap if needed */
 }
 
-#skills .skills-category ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Keep flex display */
-    flex-wrap: wrap; /* Crucial: Allow wrapping now */
-    gap: 0.8rem; /* Slightly increased gap for better spacing */
-    justify-content: flex-start; /* Align skill items to the start */
+.skills-category li {
+    margin-bottom: 0.6rem;
 }
 
-#skills .skills-category ul li {
-    background-color: var(--background-dark);
-    color: var(--text-color);
-    padding: 0.6rem 1.2rem; /* Adjusted padding */
-    border-radius: 5px;
-    font-size: 0.95rem;
-    border: 1px solid var(--border-color);
-    display: inline-flex; /* Use flexbox for icon alignment */
-    align-items: center; /* Vertically center icon and text */
-    gap: 0.6rem; /* Space between icon and text */
-    transition: background-color 0.3s ease, color 0.3s ease;
-    flex-shrink: 1; /* Allow items to shrink if needed, default */
-}
-
-#skills .skills-category ul li .fas,
-#skills .skills-category ul li .fab {
-    color: var(--primary-color); /* Deep Sky Blue for icons */
-    font-size: 1.1em; /* Slightly larger icon size */
-}
-
-#skills .skills-category ul li:hover {
-    background-color: var(--primary-color); /* Background changes on hover */
-    color: var(--button-text-color); /* Text color changes on hover */
-}
-
-#skills .skills-category ul li:hover .fas,
-#skills .skills-category ul li:hover .fab {
-    color: var(--button-text-color); /* Icon color also changes on hover to match text */
-}
-
-@media (min-width: 768px) {
-    #skills .skills-grid { /* Target the grid directly */
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-        max-width: 1000px; /* Keep max width for grid */
-        margin: 0 auto;
-    }
-    #skills .skills-category:last-child {
-        grid-column: span 2; /* Still spans two columns for the last category */
-    }
-}
-
-/* --- Projects Section --- */
+/* =========================
+   PROJECTS
+========================= */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
 }
 
 .project-card {
-    background-color: var(--card-background); /* Darker gray for project cards */
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Stronger shadow */
+    background: var(--color-card);
     padding: 2rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--border-color); /* Darker border */
+    border-radius: 18px;
+    box-shadow: var(--shadow-card);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.5); /* Even stronger hover shadow */
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-hover);
 }
 
 .project-card h3 {
-    color: var(--secondary-color); /* Bright Yellow for project titles */
-    font-size: 1.6rem;
-    margin-top: 0;
-    margin-bottom: 0.75rem;
+    color: var(--color-accent);
+    margin-bottom: 0.7rem;
 }
 
 .project-card p {
-    color: var(--text-color); /* Light gray text */
-    font-size: 1.rem;
+    color: var(--color-text-muted);
     margin-bottom: 1.5rem;
-    flex-grow: 1;
 }
 
-.project-card .button {
-    display: inline-block;
-    background-color: var(--primary-color); /* Deep Sky Blue button */
-    color: var(--button-text-color); /* Dark text on button */
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 0.5rem 0.5rem;
+.project-links {
+    display: flex;
+    gap: 1rem;
 }
 
-.project-card .button:hover {
-    background-color: var(--secondary-color); /* Bright Yellow on hover */
-    transform: translateY(-2px);
-    text-decoration: none;
-}
-
-/* --- Contact Section --- */
-#contact p {
-    font-size: 1.1rem;
+/* =========================
+   CONTACT FORM
+========================= */
+.contact-content {
     max-width: 700px;
-    margin: 0 auto 1rem;
-    color: var(--text-color); /* Light gray text */
+    margin: auto;
+    text-align: center;
 }
 
-#contact a {
-    font-weight: bold;
-}
-
-#contact .button {
+.contact-form {
     margin-top: 2rem;
 }
 
-/* --- Contact Form Styles --- */
-#contact .contact-content {
-    max-width: 700px; /* Limit form width */
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: var(--card-background); /* Use card background for the form container */
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    border: 1px solid var(--border-color);
-    text-align: left; /* Align form labels/inputs left */
-}
-
-#contact .contact-content p {
-    text-align: center; /* Center the introductory text */
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-    color: var(--text-color);
-}
-
-.contact-form .form-group {
-    margin-bottom: 1.5rem;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: var(--secondary-color); /* Bright Yellow for labels */
-    font-family: var(--font-family-heading);
-    font-size: 1.1rem;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid var(--border-color); /* Darker border */
-    border-radius: 5px;
-    background-color: var(--background-dark); /* Slightly lighter dark background for inputs */
-    color: var(--text-color); /* Light gray input text */
-    font-family: var(--font-family-body);
-    font-size: 1rem;
-    box-sizing: border-box; /* Include padding in width */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form textarea:focus {
-    border-color: var(--primary-color); /* Deep Sky Blue on focus */
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.3); /* Soft glow on focus */
-}
-
-.contact-form textarea {
-    resize: vertical; /* Allow vertical resizing */
-    min-height: 120px;
-}
-
-.contact-form button[type="submit"] {
-    width: auto; /* Button doesn't take full width */
-    margin: 0 auto; /* Center the button */
-    display: block;
-    padding: 1rem 2.5rem; /* Larger padding for button */
-    font-size: 1.1rem;
-    background-color: var(--button-bg-color);
-    color: var(--button-text-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.contact-form button[type="submit"]:hover {
-    background-color: var(--secondary-color); /* Bright Yellow on hover */
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-/* Adjust social links specifically for the contact section */
-.contact-social-links {
-    margin-top: 2.5rem; /* Space between form and social links */
-    text-align: center;
-}
-
-.contact-social-links a {
-    background-color: var(--background-dark); /* Darker background for social icons */
-    color: var(--text-color); /* Light gray icon color */
-    border-radius: 50%; /* Make them circular */
-    width: 45px;
-    height: 45px;
-    display: inline-flex; /* Use flexbox for centering icon */
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-    border: 1px solid var(--border-color); /* Add border */
-}
-
-.contact-social-links a:hover {
-    background-color: var(--primary-color); /* Deep Sky Blue on hover */
-    color: var(--button-text-color); /* Dark text on hover */
-    transform: translateY(-3px);
-    text-shadow: 0 0 15px rgba(0, 191, 255, 0.5); /* Glowing effect on hover */
-    text-decoration: none; /* Ensure no underline on hover */
-    box-shadow: 0 0 15px rgba(0, 191, 255, 0.5); /* Glowing effect on hover */
-}
-
-/* --- Footer --- */
-footer {
-    background-color: var(--background-dark); /* Darker background for footer */
-    color: var(--text-color); /* Light gray text */
-    text-align: center;
-    padding: 1.5rem 0;
-    font-size: 0.9rem;
-    margin-top: auto;
-    border-top: 1px solid var(--border-color); /* Darker border */
-}
-
-/* --- Individual Project Page Styles (.project-detail) --- */
-.project-detail {
-    padding: 4rem 1.5rem;
-    background-color: var(--background-light); /* Dark background for project detail */
+.form-group {
+    margin-bottom: 1.2rem;
     text-align: left;
-    max-width: 900px;
-    margin: 2rem auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
     border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4); /* Stronger shadow */
-    color: var(--text-color); /* Light gray text */
+    border: none;
+    outline: none;
+    background: var(--color-card);
+    color: var(--color-text);
+    font-size: 0.95rem;
+    transition: var(--transition);
 }
 
-.project-detail h1 {
+input:focus,
+textarea:focus {
+    border: 1px solid var(--color-accent);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: var(--color-card);
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color); /* Deep Sky Blue for project detail H1 */
-}
-
-.project-detail h2 {
-    font-size: 1.8rem;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    color: var(--secondary-color); /* Bright Yellow for project detail H2 */
-}
-
-.project-detail .project-tagline {
-    font-style: italic;
-    color: var(--light-text-color); /* Slightly darker gray text */
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-}
-
-.project-detail .project-links {
-    text-align: center;
-    margin-bottom: 2.5rem;
-}
-
-.project-detail .project-links .button {
-    margin: 0.75rem;
-}
-
-.project-detail img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 2rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2); /* Stronger shadow */
-}
-
-.project-detail ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    margin-bottom: 1rem;
-}
-
-.project-detail pre {
-    background-color: #000000; /* Pure black for code blocks */
-    color: #00e676; /* Neon green for code text */
-    padding: 1rem;
-    border-radius: 5px;
-    overflow-x: auto;
-    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace; /* Monospace font for code */
+    padding: 1.5rem;
     font-size: 0.9rem;
-    margin: 1.5rem 0;
-    border: 1px solid var(--primary-color); /* Border with primary color */
-    box-shadow: 0 0 10px rgba(0,191,255,0.3); /* Subtle glow effect */
+    color: var(--color-text-muted);
+    transition: var(--transition);
 }
 
-.project-detail code {
-    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
-    background-color: var(--background-dark); /* Dark background for inline code */
-    padding: 0.2em 0.4em;
-    border-radius: 3px;
-    font-size: 0.9em;
-    color: var(--primary-color); /* Primary color for inline code */
-}
-
-/* --- Responsive Design --- */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 768px) {
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.8rem; }
-    #hero h1 { font-size: 2.8rem; }
-    #hero p { font-size: 1.1rem; }
-
     nav ul {
+        gap: 1.2rem;
+    }
+    #hero h1 {
+        font-size: 2.2rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    nav.nav-bar {
         flex-direction: column;
-        gap: 1rem;
     }
-    nav ul li a::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    nav ul li a:hover::after {
-        left: 0;
-        transform: translateX(0);
-    }
-    .social-links a {
-        display: block;
-        margin: 0.5rem auto;
-        max-width: 250px;
-    }
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-    section {
-        padding: 3rem 1rem;
-    }
-    #skills .skills-grid { /* Ensure grid for skills on smaller screens is 1 column */
-        grid-template-columns: 1fr;
-    }
-    .project-detail {
-        margin: 1rem;
-        padding: 2rem 1rem;
-    }
-}
-
-/* For larger screens: better alignment for about section */
-@media (min-width: 992px) {
-    #about p {
-        text-align: justify;
+    .theme-btn {
+        margin-top: 0.8rem;
+        margin-left: 0;
     }
 }
