@@ -1,40 +1,67 @@
-# Lesego Makweya - Personal Portfolio
+# Lesego Makweya | Software Engineer Portfolio
 
-## Project Overview
+## 🚀 Overview
+A high-performance, responsive portfolio showcasing professional software engineering projects, with a focus on scalable architecture, secure backend systems, and AI implementation. This site serves as a technical deep-dive into my work with **Python (FastAPI), React, and Machine Learning**.
 
-This is a personal portfolio website showcasing my skills, projects, and professional journey. Designed to be clean, modern, and responsive, it serves as a central hub for my technical work and aspirations, with a particular emphasis on my foundational knowledge and growing passion for AI/Machine Learning.
+## 🛠️ Tech Stack & Architecture
+This portfolio is built as a static site but serves as a gateway to several full-stack applications.
 
-## Features
+* **Frontend:** HTML5, CSS3 (Modern Flex/Grid), JavaScript (ES6+).
+* **Design:** Dual-theme system (Dark/Light mode) with a "Mobile-First" approach.
+* **Infrastructure:** * **GitHub Pages:** Portfolio hosting.
+    * **Vercel:** Frontend hosting for React applications.
+    * **Render:** Backend hosting for FastAPI/PostgreSQL services.
+* **Contact System:** Integrated with **Formspree.io** for serverless lead capture.
 
-* **Responsive Design:** Optimized for seamless viewing across various devices (desktops, tablets, mobile phones).
-* **Dynamic Hero Section:** Engaging "typed text" effect to introduce my role.
-* **About Me:** Detailed section highlighting my background as an educator, transition into tech, and interest in AI/ML, specifically mentioning CAPACITI.
-* **Skills Section:** Categorized display of programming languages, front-end development, data & AI/ML fundamentals, and various tools & concepts.
-* **Projects Showcase:** A grid of individual project cards with brief descriptions and links to GitHub repositories or live demos.
-    * **AI/ML Projects:** Smart Health Assistant, AI Assistant.
-    * **Personal Development Projects:** E-commerce Website, Weather App, To-Do List (React), Simple Web Scraper.
-* **Contact Form:** A functional contact form powered by Formspree.
-* **Social Links:** Easy access to my LinkedIn and GitHub profiles.
-* **CV Download:** Direct link to download my curriculum vitae.
+## 🌟 Key Features
+* **Interactive Case Studies:** Individual project pages detailing the "Technical Challenge" and "Achievements" for each build.
+* **Secure Project Integrations:** Showcasing live implementations of **JWT (JSON Web Tokens)** and **Bcrypt** encryption.
+* **AI/ML Focus:** Dedicated sections for NLP (FairCV-Match) and data-driven logic.
+* **Performance Optimized:** Minified assets and semantic HTML for high SEO rankings and accessibility.
 
-## Technologies Used
+## 📂 Project Showcase
 
-This project primarily leverages standard web technologies and external libraries for enhanced functionality:
+### 1. Freelance Management Dashboard
+* **Stack:** React, FastAPI, PostgreSQL, JWT.
+* **Key Feature:** A secure financial hub for freelancers to track real-time revenue and manage clients via a stateless authentication system.
 
-* **HTML5:** For the core structure and semantic content.
-* **CSS3:** For styling, layout, and responsive design.
-* **JavaScript:** For interactive elements (e.g., typing effect, sticky header).
-* **Google Fonts:**
-    * `Rajdhani` (for headings)
-    * `Inter` (for body text)
-* **Font Awesome:** For scalable vector icons (e.g., social media icons, skill icons).
-* **Formspree.io:** A service used to handle contact form submissions without requiring a backend server.
-* **External Project Technologies (referenced within portfolio):**
-    * **ReactJS:** For the To-Do List and E-commerce website frontends.
-    * **Node.js / Express:** For the backend of the E-commerce website.
-    * **Stripe:** Payment gateway integrated into the E-commerce website.
-    * **Public APIs:** Used in projects like the Weather App.
+### 2. FairCV-Match (NLP Tool)
+* **Stack:** Python, Scikit-Learn, TF-IDF.
+* **Key Feature:** An interpretable Machine Learning tool that matches CVs to Job Descriptions using Cosine Similarity.
 
-## Project Structure
+### 3. Math Expression Evaluator
+* **Stack:** Python, Tkinter, Pytest.
+* **Key Feature:** A scientific computing engine built with strict OOP principles, decoupling mathematical logic from the UI.
 
-The project follows a straightforward and organized directory structure:
+### 4. Mini Task Manager
+* **Stack:** Python, File I/O.
+* **Key Feature:** A desktop productivity tool demonstrating CRUD operations and persistent data storage.
+
+## 🏗️ Project Structure
+├── index.html          # Main Portfolio Entry
+├── css/
+│   └── style.css       # Custom Variable-based Design System
+├── js/
+│   └── script.js       # Theme Switching & UI Interactions
+├── projects/           # Detailed Case Studies
+│   ├── freelance-management-dashboard.html
+│   ├── faircv-match.html
+│   ├── math-expression-evaluator.html
+│   └── mini-task-manager.html
+└── img/                # Optimized WebP assets
+
+## 🚀 Running Locally
+1. Clone the repository:
+git clone [https://github.com/lmakweya9/lmakweya9.github.io.git](https://github.com/lmakweya9/lmakweya9.github.io.git)
+2. Open with a local server:
+
+## Using Python
+python -m http.server 8000
+View at http://localhost:8000
+
+## 📬 Contact & Socials
+LinkedIn: Lesego Makweya
+Email: lmakweya@student.wethinkcode.co.za
+GitHub: @lmakweya9
+
+Built with ❤️ and Clean Code by Lesego Makweya.
