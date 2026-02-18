@@ -62,8 +62,8 @@ python -m http.server 8000
 View at http://localhost:8000
 
 ## 📬 Contact & Socials
-LinkedIn: Lesego Makweya
-Email: lmakweya@student.wethinkcode.co.za
-GitHub: @lmakweya9
+[x]LinkedIn: Lesego Makweya
+[x]Email: lmakweya@student.wethinkcode.co.za
+[x]GitHub: @lmakweya9
 
 Built with ❤️ and Clean Code by Lesego Makweya.
