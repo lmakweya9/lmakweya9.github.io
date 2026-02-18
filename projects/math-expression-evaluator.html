@@ -1,89 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Math Expression Evaluator - Lesego Makweya Portfolio</title>
-<meta name="description" content="Professional Python calculator with variable management, complex expression parsing, and robust error handling.">
-<meta name="keywords" content="Math Expression Evaluator, Python, Calculator, Lesego Makweya, Portfolio">
-<meta name="author" content="Lesego Makweya">
-<meta name="robots" content="index, follow">
-
-<meta property="og:title" content="Math Expression Evaluator - Lesego Makweya Portfolio">
-<meta property="og:description" content="Professional Python calculator with variable management, complex expression parsing, and robust error handling.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://lmakweya9.github.io/projects/math-expression-evaluator.html">
-<meta property="og:image" content="https://lmakweya9.github.io/img/math-eval-screenshot.webp">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Math Expression Evaluator - Lesego Makweya Portfolio">
-<meta name="twitter:description" content="Professional Python calculator with variable management, complex expression parsing, and robust error handling.">
-<meta name="twitter:image" content="https://lmakweya9.github.io/img/math-eval-screenshot.webp">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Evaluator - Lesego Makweya</title>
+    <meta name="description" content="Scientific calculator engine built with OOP principles and complex expression parsing.">
+    <link rel="stylesheet" href="../css/style.css?v=1.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body class="dark-mode">
 
 <header>
     <div class="container">
-        <nav>
+        <nav class="nav-bar">
             <ul>
                 <li><a href="../index.html#hero">Home</a></li>
-                <li><a href="../index.html#about">About</a></li>
-                <li><a href="../index.html#skills">Skills</a></li>
                 <li><a href="../index.html#projects">Projects</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
             </ul>
-            <button id="theme-toggle" aria-label="Toggle Dark Mode" class="theme-btn">
-                <i class="fas fa-moon"></i>
-            </button>
+            <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
         </nav>
     </div>
 </header>
 
 <main class="container">
-<section id="project-details">
-<h1>Math Expression Evaluator</h1>
-<p>Professional Python calculator with variable management, complex expression parsing, and robust error handling.</p>
+    <section id="project-detail" class="visible">
+        <h1>Math Expression Evaluator</h1>
+        <p class="tagline">Decoupled Logic & Scientific Computing Engine</p>
 
+        <div class="project-meta">
+            <span><i class="fab fa-python"></i> Python 3.x</span>
+            <span><i class="fas fa-project-diagram"></i> OOP Architecture</span>
+            <span><i class="fas fa-vial"></i> Unit Testing (Pytest)</span>
+            <span><i class="fas fa-desktop"></i> Tkinter UI</span>
+        </div>
 
-<h2>Features</h2>
-<ul>
-<li>Parse complex mathematical expressions</li>
-<li>Variable state management</li>
-<li>Modular OOP Python design</li>
-<li>Robust error handling</li>
-</ul>
+        <div class="about-text" style="text-align: left; margin: 2rem 0;">
+            <h2>Project Overview</h2>
+            <p>This project is a deep-dive into software engineering principles. I engineered a professional-grade scientific calculator by strictly <strong>decoupling the mathematical engine</strong> from the user interface. This ensures the evaluation logic can be reused in web or mobile apps without modification.</p>
 
-<div class="project-links">
-<a href="https://github.com/lmakweya9/math-expression-evaluator" target="_blank" class="button">View on GitHub</a>
-<a href="../index.html#projects" class="button">Back to Portfolio</a>
-</div>
-</section>
+            
+
+            <h2>Technical Achievements</h2>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 1rem;">
+                    <strong><i class="fas fa-code" style="color: var(--color-accent);"></i> Variable State Management:</strong> 
+                    Developed a custom parser that handles variables (e.g., storing <code>x = 15</code>) and constants, allowing for multi-step scientific calculations.
+                </li>
+                <li style="margin-bottom: 1rem;">
+                    <strong><i class="fas fa-check-double" style="color: var(--color-accent);"></i> CI/CD Pipeline:</strong> 
+                    Integrated a <strong>GitHub Actions</strong> workflow that runs a comprehensive suite of unit tests on every push to ensure mathematical accuracy.
+                </li>
+            </ul>
+        </div>
+
+        <div class="project-links">
+            <a href="https://github.com/lmakweya9/math-expression-evaluator" target="_blank" class="button"><i class="fab fa-github"></i> View Repository</a>
+            <a href="../index.html#projects" class="button" style="background: var(--color-card); border: 1px solid var(--color-accent); color: var(--color-text);">Back to Portfolio</a>
+        </div>
+    </section>
 </main>
-
-<footer>
-    <div class="container">
-        <p>&copy; 2026 Lesego Makweya. All rights reserved.</p>
-    </div>
-</footer>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Math Expression Evaluator",
-  "author": {"@type": "Person","name":"Lesego Makweya","url":"https://lmakweya9.github.io/"},
-  "description": "Professional Python calculator with variable management, complex expression parsing, and robust error handling.",
-  "url": "https://github.com/lmakweya9/math-expression-evaluator",
-  "image": "https://lmakweya9.github.io/img/math-eval-screenshot.webp"
-}
-</script>
-
-<script src="../js/script.js?v=1.0" defer></script>
 </body>
 </html>
