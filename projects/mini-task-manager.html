@@ -1,102 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mini Task Manager - Lesego Makweya Portfolio</title>
-<meta name="description" content="Mini Task Manager by Lesego Makweya. Desktop Python app with CRUD functionality and persistent storage, demonstrating modular design and clean code.">
-<meta name="keywords" content="Mini Task Manager, Python, Desktop App, Task Manager, Lesego Makweya, Portfolio">
-<meta name="author" content="Lesego Makweya">
-<meta name="robots" content="index, follow">
-
-<!-- Open Graph / Social -->
-<meta property="og:title" content="Mini Task Manager - Lesego Makweya Portfolio">
-<meta property="og:description" content="Desktop Python app with CRUD functionality and persistent storage, demonstrating modular design and clean Python code.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://lmakweya9.github.io/projects/mini-task-manager.html">
-<meta property="og:image" content="https://lmakweya9.github.io/img/mini-task-screenshot.webp">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Mini Task Manager - Lesego Makweya Portfolio">
-<meta name="twitter:description" content="Desktop Python app with CRUD functionality and persistent storage, demonstrating modular design and clean Python code.">
-<meta name="twitter:image" content="https://lmakweya9.github.io/img/mini-task-screenshot.webp">
-
-<!-- Fonts & Icons -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<!-- CSS -->
-<link rel="stylesheet" href="../css/style.css?v=1.0">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Task Manager - Lesego Makweya</title>
+    <meta name="description" content="Desktop Python application with CRUD functionality and persistent storage.">
+    <link rel="stylesheet" href="../css/style.css?v=1.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body class="dark-mode">
 
 <header>
     <div class="container">
-        <nav>
+        <nav class="nav-bar">
             <ul>
                 <li><a href="../index.html#hero">Home</a></li>
-                <li><a href="../index.html#about">About</a></li>
-                <li><a href="../index.html#skills">Skills</a></li>
                 <li><a href="../index.html#projects">Projects</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
             </ul>
-            <button id="theme-toggle" aria-label="Toggle Dark Mode" class="theme-btn">
-                <i class="fas fa-moon"></i>
-            </button>
+            <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
         </nav>
     </div>
 </header>
 
 <main class="container">
-    <section id="project-details">
+    <section id="project-detail" class="visible">
         <h1>Mini Task Manager</h1>
-        <p>Desktop Python app with CRUD functionality and persistent storage, demonstrating modular design and clean Python code.</p>
+        <p class="tagline">Modular Desktop Productivity Tool</p>
 
+        <div class="project-meta">
+            <span><i class="fab fa-python"></i> Python 3.x</span>
+            <span><i class="fas fa-save"></i> Persistent Storage</span>
+            <span><i class="fas fa-cubes"></i> Modular Design</span>
+            <span><i class="fas fa-terminal"></i> CLI / GUI</span>
+        </div>
 
-        <h2>Features</h2>
-        <ul>
-            <li>Create, Read, Update, Delete tasks</li>
-            <li>Persistent storage with files</li>
-            <li>Clean modular Python code demonstrating OOP</li>
-            <li>Interactive command-line interface</li>
-        </ul>
+        <div class="about-text" style="text-align: left; margin: 2rem 0;">
+            <h2>Project Overview</h2>
+            <p>The Mini Task Manager is a desktop-based application designed to demonstrate the fundamentals of <strong>Software Engineering</strong>. It provides a reliable way to manage daily tasks using a clean interface, ensuring that data is never lost between sessions.</p>
+
+            
+
+            <h2>Technical Achievements</h2>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 1rem;">
+                    <strong><i class="fas fa-database" style="color: var(--color-accent);"></i> Persistent Data Handling:</strong> 
+                    Implemented a robust file-handling system to ensure tasks are saved to local storage, allowing the application to maintain state even after a reboot.
+                </li>
+                <li style="margin-bottom: 1rem;">
+                    <strong><i class="fas fa-layer-group" style="color: var(--color-accent);"></i> CRUD Architecture:</strong> 
+                    Designed the application logic to follow the CRUD pattern, providing a seamless user experience for adding, viewing, editing, and removing tasks.
+                </li>
+                <li style="margin-bottom: 1rem;">
+                    <strong><i class="fas fa-box-open" style="color: var(--color-accent);"></i> Modular Codebase:</strong> 
+                    Organized the project into distinct modules for data storage, business logic, and user interaction, facilitating easier debugging and future feature expansion.
+                </li>
+            </ul>
+
+            <h2>The Challenge</h2>
+            <p>The main objective was to handle data serialization—converting complex Python objects into a format that can be stored in a file and then reconstructed (deserialized) without losing the integrity of the task attributes.</p>
+        </div>
 
         <div class="project-links">
-            <a href="https://github.com/lmakweya9/mini-task-manager" target="_blank" class="button">View on GitHub</a>
-            <a href="../index.html#projects" class="button">Back to Portfolio</a>
+            <a href="https://github.com/lmakweya9/mini-task-manager" target="_blank" class="button"><i class="fab fa-github"></i> View Repository</a>
+            <a href="../index.html#projects" class="button" style="background: var(--color-card); border: 1px solid var(--color-accent); color: var(--color-text);">Back to Portfolio</a>
         </div>
     </section>
 </main>
 
 <footer>
     <div class="container">
-        <p>&copy; 2026 Lesego Makweya. All rights reserved.</p>
+        <p>&copy; 2026 Lesego Makweya. Professional Software Engineering Portfolio.</p>
     </div>
 </footer>
 
-<!-- Structured Data for this Project -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Mini Task Manager",
-  "author": {
-    "@type": "Person",
-    "name": "Lesego Makweya",
-    "url": "https://lmakweya9.github.io/"
-  },
-  "description": "Desktop Python app with CRUD functionality and persistent storage, demonstrating modular design and clean Python code.",
-  "url": "https://github.com/lmakweya9/mini-task-manager",
-  "image": "https://lmakweya9.github.io/img/mini-task-screenshot.webp"
-}
-</script>
-
-<!-- JS -->
 <script src="../js/script.js?v=1.0" defer></script>
 </body>
 </html>
