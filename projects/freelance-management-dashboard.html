@@ -3,54 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freelance Dashboard - Project Details</title>
-    <link rel="stylesheet" href="../css/style.css">
+
+    <title>Freelance Management Dashboard - Lesego Makweya</title>
+    <meta name="description" content="A full-stack financial hub for freelancers featuring secure JWT authentication and real-time budget tracking. Built with FastAPI and React.">
+    <meta name="keywords" content="Full Stack Developer, FastAPI, React, JWT Authentication, Software Engineer, Lesego Makweya, Freelance Dashboard">
+    <meta name="author" content="Lesego Makweya">
+
+    <meta property="og:title" content="Freelance Management Dashboard - Lesego Makweya">
+    <meta property="og:description" content="Secure financial hub for freelancers featuring JWT authentication and real-time revenue engines.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lmakweya9.github.io/projects/freelance-management-dashboard.html">
+    <meta property="og:image" content="https://lmakweya9.github.io/img/dashboard-preview.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css?v=1.1">
 </head>
 <body class="dark-mode">
-    <header>
-        <div class="container">
-            <nav class="nav-bar">
-                <ul>
-                    <li><a href="../index.html">← Back to Portfolio</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <main class="container" style="padding: 5rem 0;">
-        <section id="project-detail" class="visible">
-            <h1>Freelance Management Dashboard</h1>
-            <p class="tagline">Secure Full-Stack Financial Hub</p>
-            
-            <div class="project-meta">
-                <span><i class="fab fa-react"></i> React Frontend</span>
-                <span><i class="fab fa-python"></i> FastAPI Backend</span>
-                <span><i class="fas fa-key"></i> JWT Auth</span>
-                <span><i class="fas fa-database"></i> PostgreSQL</span>
-            </div>
-
-            <h2>Architecture Overview</h2>
-            <p>Developed to replace manual spreadsheet tracking, this application provides a centralized source of truth for freelance earnings and client statuses.</p>
-
-            <h2>Technical Achievements</h2>
+<header>
+    <div class="container">
+        <nav class="nav-bar">
             <ul>
-                <li><strong>Security First:</strong> Implemented JWT-based stateless authentication and Bcrypt password hashing to ensure data integrity.</li>
-                <li><strong>Live Financial Tracking:</strong> Designed a reactive budget engine that aggregates revenue in real-time.</li>
-                <li><strong>Decoupled Deployment:</strong> Orchestrated a CI/CD strategy using Vercel (Frontend) and Render (Backend).</li>
+                <li><a href="../index.html#hero">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Toggle Dark Mode" class="theme-btn">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section id="project-detail" class="visible">
+        <h1>Freelance Management Dashboard</h1>
+        <p class="tagline">Full-Stack Hub for Secure Client & Financial Management</p>
+
+        <div class="project-meta">
+            <span><i class="fab fa-react"></i> React & Tailwind</span>
+            <span><i class="fab fa-python"></i> FastAPI & PostgreSQL</span>
+            <span><i class="fas fa-shield-alt"></i> JWT Authentication</span>
+            <span><i class="fas fa-cloud"></i> Vercel & Render</span>
+        </div>
+
+        <div class="about-text" style="text-align: left; margin: 2rem 0;">
+            <h2>Project Overview</h2>
+            <p>Developed to replace manual spreadsheet tracking, this application provides a centralized source of truth for freelance earnings, project timelines, and client statuses. The core focus was on <strong>security</strong> and <strong>decoupled architecture</strong>.</p>
+            
+            
+
+            <h2>Key Technical Achievements</h2>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 1rem;">
+                    <strong><i class="fas fa-lock" style="color: var(--color-accent);"></i> Stateless Security:</strong> 
+                    Engineered a robust authentication system using JSON Web Tokens (JWT). Implemented Bcrypt for secure password hashing and middleware for protected route verification.
+                </li>
+                <li style="margin-bottom: 1rem;">
+                    <strong><i class="fas fa-chart-line" style="color: var(--color-accent);"></i> Revenue Engine:</strong> 
+                    Built a real-time budget aggregator that dynamically calculates total earnings, pending payments, and active project costs across the entire database.
+                </li>
+                <li style="margin-bottom: 1rem;">
+                    <strong><i class="fas fa-server" style="color: var(--color-accent);"></i> Decoupled Architecture:</strong> 
+                    Orchestrated a modern deployment strategy by hosting the FastAPI backend on Render and the React frontend on Vercel, optimized with secure CORS policies.
+                </li>
             </ul>
 
-            <div class="project-links" style="margin-top: 3rem;">
-                <a href="https://freelance-dashboard-ruddy.vercel.app/" target="_blank" class="button">Live Demo</a>
-                <a href="https://github.com/lmakweya9/freelance-dashboard" target="_blank" class="button">Source Code</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Lesego Makweya</p>
+            <h2>The Challenge</h2>
+            <p>The primary challenge was ensuring seamless data flow between the frontend and backend while maintaining strictly defined data types. This was solved by utilizing <strong>Pydantic</strong> models in FastAPI to validate API requests and responses, ensuring the UI always receives clean, reliable data.</p>
         </div>
-    </footer>
+
+        <div class="project-links">
+            <a href="https://freelance-dashboard-ruddy.vercel.app/" target="_blank" class="button">Live Demo</a>
+            <a href="https://github.com/lmakweya9/freelance-dashboard" target="_blank" class="button"><i class="fab fa-github"></i> View Repository</a>
+            <a href="../index.html#projects" class="button" style="background: var(--color-card); border: 1px solid var(--color-accent); color: var(--color-text);">Back to Portfolio</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Lesego Makweya. Portfolio built with Clean Code principles.</p>
+    </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Freelance Management Dashboard",
+  "operatingSystem": "Web",
+  "applicationCategory": "BusinessApplication",
+  "author": {
+    "@type": "Person",
+    "name": "Lesego Makweya"
+  },
+  "description": "Secure financial hub for freelancers featuring JWT authentication and real-time revenue tracking.",
+  "softwareVersion": "1.0",
+  "offers": {
+    "@type": "Offer",
+    "price": "0.00",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<script src="../js/script.js?v=1.0" defer></script>
 </body>
 </html>
