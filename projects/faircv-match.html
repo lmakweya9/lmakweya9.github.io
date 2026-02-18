@@ -1,88 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>FairCV-Match - Lesego Makweya Portfolio</title>
-<meta name="description" content="Interpretable NLP tool matching CVs to job descriptions using scikit-learn.">
-<meta name="keywords" content="FairCV-Match, NLP, Machine Learning, Lesego Makweya, Portfolio">
-<meta name="author" content="Lesego Makweya">
-<meta name="robots" content="index, follow">
-
-<meta property="og:title" content="FairCV-Match - Lesego Makweya Portfolio">
-<meta property="og:description" content="Interpretable NLP tool matching CVs to job descriptions using scikit-learn.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://lmakweya9.github.io/projects/faircv-match.html">
-<meta property="og:image" content="https://lmakweya9.github.io/img/faircv-match-screenshot.webp">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="FairCV-Match - Lesego Makweya Portfolio">
-<meta name="twitter:description" content="Interpretable NLP tool matching CVs to job descriptions using scikit-learn.">
-<meta name="twitter:image" content="https://lmakweya9.github.io/img/faircv-match-screenshot.webp">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FairCV-Match - Lesego Makweya</title>
+    <meta name="description" content="NLP tool for matching CVs to job descriptions using Scikit-Learn and interpretable AI.">
+    <link rel="stylesheet" href="../css/style.css?v=1.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body class="dark-mode">
 
 <header>
     <div class="container">
-        <nav>
+        <nav class="nav-bar">
             <ul>
                 <li><a href="../index.html#hero">Home</a></li>
-                <li><a href="../index.html#about">About</a></li>
-                <li><a href="../index.html#skills">Skills</a></li>
                 <li><a href="../index.html#projects">Projects</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
             </ul>
-            <button id="theme-toggle" aria-label="Toggle Dark Mode" class="theme-btn">
-                <i class="fas fa-moon"></i>
-            </button>
+            <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
         </nav>
     </div>
 </header>
 
 <main class="container">
-<section id="project-details">
-<h1>FairCV-Match</h1>
-<p>Interpretable NLP tool matching CVs to job descriptions using scikit-learn.</p>
+    <section id="project-detail" class="visible">
+        <h1>FairCV-Match</h1>
+        <p class="tagline">Interpretable NLP for Recruitment Optimization</p>
 
-<h2>Features</h2>
-<ul>
-<li>CV and job description matching</li>
-<li>Scikit-learn ML models</li>
-<li>Performance and fairness visualizations</li>
-<li>Easy-to-read output for recruiters and HR</li>
-</ul>
+        <div class="project-meta">
+            <span><i class="fab fa-python"></i> Python</span>
+            <span><i class="fas fa-robot"></i> Scikit-Learn</span>
+            <span><i class="fas fa-language"></i> NLP (TF-IDF)</span>
+            <span><i class="fas fa-microchip"></i> Machine Learning</span>
+        </div>
 
-<div class="project-links">
-<a href="https://github.com/lmakweya9/faircv-match" target="_blank" class="button">View on GitHub</a>
-<a href="../index.html#projects" class="button">Back to Portfolio</a>
-</div>
-</section>
+        <div class="about-text" style="text-align: left; margin: 2rem 0;">
+            <h2>Project Overview</h2>
+            <p>FairCV-Match is a specialized Natural Language Processing (NLP) tool designed to bridge the gap between candidate resumes and job requirements. Unlike "black-box" AI, this tool focuses on <strong>interpretable matching</strong> to ensure recruiters understand why a candidate was ranked highly.</p>
+
+            
+
+            <h2>Technical Achievements</h2>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 1rem;">
+                    <strong><i class="fas fa-vector-square" style="color: var(--color-accent);"></i> Semantic Vectorization:</strong> 
+                    Implemented <strong>TF-IDF</strong> (Term Frequency-Inverse Document Frequency) to transform raw text into mathematical vectors, prioritizing unique skills over common stop-words.
+                </li>
+                <li style="margin-bottom: 1rem;">
+                    <strong><i class="fas fa-equals" style="color: var(--color-accent);"></i> Cosine Similarity:</strong> 
+                    Developed a scoring engine using <strong>Cosine Similarity</strong> to measure the distance between CV vectors and Job Description vectors, providing a percentage-based match.
+                </li>
+            </ul>
+        </div>
+
+        <div class="project-links">
+            <a href="https://github.com/lmakweya9/faircv-match" target="_blank" class="button"><i class="fab fa-github"></i> View Repository</a>
+            <a href="../index.html#projects" class="button" style="background: var(--color-card); border: 1px solid var(--color-accent); color: var(--color-text);">Back to Portfolio</a>
+        </div>
+    </section>
 </main>
-
-<footer>
-    <div class="container">
-        <p>&copy; 2026 Lesego Makweya. All rights reserved.</p>
-    </div>
-</footer>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "FairCV-Match",
-  "author": {"@type": "Person","name":"Lesego Makweya","url":"https://lmakweya9.github.io/"},
-  "description": "Interpretable NLP tool matching CVs to job descriptions using scikit-learn.",
-  "url": "https://github.com/lmakweya9/faircv-match",
-  "image": "https://lmakweya9.github.io/img/faircv-match-screenshot.webp"
-}
-</script>
-
-<script src="../js/script.js?v=1.0" defer></script>
 </body>
 </html>
