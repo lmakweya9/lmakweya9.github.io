@@ -1,190 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesego Makweya - Portfolio</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-
-<meta name="description" content="Lesego Makweya - Junior Full-Stack / Software Developer Portfolio. Projects include Python apps, web apps, and AI/ML solutions.">
-<meta name="keywords" content="Lesego Makweya, Portfolio, Python, JavaScript, React, AI, ML, Software Developer, Web Developer">
-<meta name="author" content="Lesego Makweya">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Lesego Makweya - Portfolio">
-<meta property="og:description" content="Junior Full-Stack / Software Developer portfolio with Python, JavaScript, React projects, and AI/ML tools.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://lmakweya9.github.io/portfolio/">
-<meta property="og:image" content="https://lmakweya9.github.io/img/profile.webp">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Lesego Makweya - Portfolio">
-<meta name="twitter:description" content="Junior Full-Stack / Software Developer portfolio with Python, JavaScript, React projects, and AI/ML tools.">
-<meta name="twitter:image" content="img/profile.png">
-
-<!-- Fonts & Icons -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<!-- CSS -->
-<link rel="stylesheet" href="css/style.css?v=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesego Makweya - Portfolio</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=1.1">
 </head>
-<body>
+<body class="dark-mode">
 
-<header>
-<div class="container">
-    <nav>
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button id="theme-toggle" aria-label="Toggle Dark Mode" class="theme-btn">
-            <i class="fas fa-moon"></i>
-        </button>
-    </nav>
-</div>
-</header>
+    <header>
+        <div class="container">
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button id="theme-toggle" aria-label="Toggle Dark Mode" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
 
-<!-- Hero Section -->
-<section id="hero" class="container">
-<img src="img/profile.webp" alt="Lesego Makweya Profile Picture" width="150" height="150" loading="lazy">
-<h1>Hi, I'm Lesego Makweya 👋</h1>
-<p><span id="typed-text"></span><span class="blinking-cursor">|</span></p>
-<div class="social-links">
-<a href="https://linkedin.com/in/lesego-makweya-5777a11b3/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i> LinkedIn</a>
-<a href="https://github.com/lmakweya9" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i> GitHub</a>
-</div>
-</section>
+    <section id="hero" class="container visible">
+        <img src="img/profile.jpg" alt="Lesego Makweya" width="150" height="150">
+        <h1>Lesego Makweya</h1>
+        <p><span id="typed-text">Software Engineer | Python & Fullstack Specialist</span><span class="blinking-cursor">|</span></p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/lesego-makweya-5777a11b3/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/lmakweya9" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+    </section>
 
-<!-- About Section -->
-<section id="about" class="container">
-<h2>About Me</h2>
-<p>I’m <strong>Lesego Makweya</strong>, a Junior Full-Stack / Software Developer based in Pretoria, South Africa. I specialize in building <strong>web applications, client websites, and data-driven systems</strong>, with hands-on experience in <strong>Python, JavaScript, React</strong>, and backend integration. I leverage AI-assisted tools to improve development workflows and productivity.</p>
-<p>Professional experience includes <strong>Web Developer & Technical Administrator at XCORE Solutions</strong>, building client websites, integrating custom functionality, and teaching coding to students.</p>
-<p>Key projects include:</p>
-<ul>
-<li><strong>Mini Task Manager (Python)</strong> – Desktop CRUD app. <a href="projects/mini-task-manager.html">Project Page</a></li>
-<li><strong>Math Expression Evaluator (Python)</strong> – Scientific calculator. <a href="projects/math-expression-evaluator.html">Project Page</a></li>
-<li><strong>FairCV-Match (ML Project)</strong> – NLP tool for CV matching. <a href="projects/faircv-match.html">Project Page</a></li>
-</ul>
-<p>Download my <a href="https://lmakweya9.github.io/Lesego%20CV.docx" target="_blank">CV</a>.</p>
-</section>
+    <section id="about" class="container visible">
+        <h2>About Me</h2>
+        <div class="about-text">
+            <p>
+                I am a detail-oriented <strong>Software Engineer</strong> with a focus on scalable architecture and AI implementation. 
+                With a proven track record at <strong>XCORE Solutions</strong>, I specialize in delivering end-to-end web applications and decoupling complex mathematical logic from UI layers.
+            </p>
+            <p>
+                Currently, I am advancing my expertise in <strong>Artificial Intelligence</strong> at the AI Academy for Women to build automated, data-driven systems. I thrive in high-pressure environments, leveraging <strong>Python, React, and FastAPI</strong> to solve real-world problems.
+            </p>
+        </div>
+    </section>
 
-<!-- Skills Section -->
-<section id="skills" class="container">
-<h2>Skills</h2>
-<div class="skills-grid">
-<div class="skills-category">
-<h3>Programming Languages</h3>
-<ul>
-<li><i class="fab fa-python"></i> Python</li>
-<li><i class="fab fa-js"></i> JavaScript</li>
-<li><i class="fab fa-java"></i> Java</li>
-<li><i class="fas fa-code"></i> C</li>
-</ul>
-</div>
-<div class="skills-category">
-<h3>Front-end Development</h3>
-<ul>
-<li><i class="fab fa-html5"></i> HTML5</li>
-<li><i class="fab fa-css3-alt"></i> CSS3</li>
-<li><i class="fab fa-react"></i> React</li>
-<li><i class="fas fa-mobile-alt"></i> Responsive Design</li>
-</ul>
-</div>
-<div class="skills-category">
-<h3>Data & AI/ML</h3>
-<ul>
-<li><i class="fas fa-robot"></i> Machine Learning</li>
-<li><i class="fas fa-project-diagram"></i> Data Structures & Algorithms</li>
-<li><i class="fas fa-database"></i> SQL</li>
-<li><i class="fas fa-spider"></i> Web Scraping (BeautifulSoup)</li>
-</ul>
-</div>
-<div class="skills-category">
-<h3>Tools & Concepts</h3>
-<ul>
-<li><i class="fab fa-git-alt"></i> Git/GitHub</li>
-<li><i class="fas fa-object-ungroup"></i> OOP</li>
-<li><i class="fas fa-lightbulb"></i> UX Principles</li>
-<li><i class="fas fa-broom"></i> Clean Code</li>
-<li><i class="fas fa-puzzle-piece"></i> Problem Solving</li>
-</ul>
-</div>
-</div>
-</section>
+    <section id="skills" class="container visible">
+        <h2>Technical Expertise</h2>
+        <div class="skills-grid">
+            <div class="skills-category">
+                <h3>Backend & Logic</h3>
+                <ul>
+                    <li><i class="fab fa-python"></i> Python (FastAPI / Flask)</li>
+                    <li><i class="fas fa-key"></i> JWT Authentication</li>
+                    <li><i class="fas fa-database"></i> PostgreSQL / SQLite</li>
+                    <li><i class="fas fa-code-branch"></i> CI/CD Pipelines</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Frontend</h3>
+                <ul>
+                    <li><i class="fab fa-react"></i> React.js</li>
+                    <li><i class="fab fa-js"></i> JavaScript ES6+</li>
+                    <li><i class="fas fa-paint-brush"></i> Tailwind / CSS3</li>
+                    <li><i class="fas fa-mobile-alt"></i> Responsive Design</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<!-- Projects Section -->
-<section id="projects" class="container">
-<h2>Projects</h2>
-<div class="project-grid">
-<div class="project-card">
-<h3>Mini Task Manager</h3>
-<p>Desktop-based task manager demonstrating modular design and clean Python code.</p>
-<div class="project-links">
-<a href="projects/mini-task-manager.html" class="button">View Project</a>
-<a href="https://github.com/lmakweya9/mini-task-manager" target="_blank" class="button">GitHub</a>
-</div>
-</div>
-<div class="project-card">
-<h3>Math Expression Evaluator</h3>
-<p>Professional-grade Python calculator with variable state management and complex parsing.</p>
-<div class="project-links">
-<a href="projects/math-expression-evaluator.html" class="button">View Project</a>
-<a href="https://github.com/lmakweya9/math-expression-evaluator" target="_blank" class="button">GitHub</a>
-</div>
-</div>
-<div class="project-card">
-<h3>FairCV-Match</h3>
-<p>Interpretable NLP tool for matching CVs to job descriptions using scikit-learn.</p>
-<div class="project-links">
-<a href="projects/faircv-match.html" class="button">View Project</a>
-<a href="https://github.com/lmakweya9/faircv-match" target="_blank" class="button">GitHub</a>
-</div>
-</div>
-</div>
-</section>
+    <section id="projects" class="container visible">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card highlight">
+                <h3>Freelance Dashboard</h3>
+                <p>Full-stack financial hub featuring secure JWT authentication and real-time revenue tracking for freelancers.</p>
+                <div class="project-links">
+                    <a href="projects/freelance-management-dashboard.html" class="button">View Project</a>
+                    <a href="https://github.com/lmakweya9/freelance-dashboard" target="_blank" class="button">GitHub</a>
+                </div>
+            </div>
 
-<!-- Contact Section -->
-<section id="contact" class="container">
-<h2>Get in Touch</h2>
-<div class="contact-content">
-<p>Always open to opportunities, collaborations, or a friendly tech chat.</p>
-<form action="https://formspree.io/f/mblkdeyy" method="POST" class="contact-form">
-<div class="form-group">
-<label for="name">Name:</label>
-<input type="text" id="name" name="name" required>
-</div>
-<div class="form-group">
-<label for="email">Email:</label>
-<input type="email" id="email" name="_replyto" required>
-</div>
-<div class="form-group">
-<label for="message">Message:</label>
-<textarea id="message" name="message" rows="6" required></textarea>
-</div>
-<button type="submit" class="button">Send Message</button>
-</form>
+            <div class="project-card">
+                <h3>Math Evaluator</h3>
+                <p>Scientific calculator engine built with OOP principles, decoupling complex math logic from the UI layer.</p>
+                <div class="project-links">
+                    <a href="projects/math-expression-evaluator.html" class="button">View Case Study</a>
+                    <a href="https://github.com/lmakweya9/math-expression-evaluator" target="_blank" class="button">GitHub</a>
+                </div>
+            </div>
 
-<div class="social-links contact-social-links">
-<a href="https://linkedin.com/in/lesego-makweya-5777a11b3/" target="_blank"><i class="fab fa-linkedin"></i></a>
-<a href="https://github.com/lmakweya9" target="_blank"><i class="fab fa-github"></i></a>
-</div>
-</div>
-</section>
+            <div class="project-card">
+                <h3>FairCV-Match</h3>
+                <p>Interpretable NLP tool matching CVs to job descriptions using Scikit-Learn for recruitment optimization.</p>
+                <div class="project-links">
+                    <a href="projects/faircv-match.html" class="button">View Case Study</a>
+                    <a href="https://github.com/lmakweya9/faircv-match" target="_blank" class="button">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-<div class="container">
-<p>&copy; 2026 Lesego Makweya. All rights reserved.</p>
-</div>
-</footer>
+    <section id="contact" class="container visible">
+        <h2>Get in Touch</h2>
+        <div class="contact-content">
+            <p>Always open to new opportunities, collaborations, or a chat about AI and Web Dev.</p>
+            <form action="https://formspree.io/f/mblkdeyy" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="_replyto" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="button">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-<script src="js/script.js?v=1.0" defer></script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Lesego Makweya. Built with FastAPI, React, and Clean Code.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js?v=1.0" defer></script>
 </body>
 </html>
