@@ -50,6 +50,7 @@ This portfolio is built as a static site but serves as a gateway to several full
 │   ├── math-expression-evaluator.html
 │   └── mini-task-manager.html
 └── img/                # Optimized WebP assets
+````
 
 ## 🚀 Running Locally
 1. Clone the repository:
