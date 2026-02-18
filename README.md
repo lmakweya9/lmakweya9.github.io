@@ -38,6 +38,7 @@ This portfolio is built as a static site but serves as a gateway to several full
 * **Key Feature:** A desktop productivity tool demonstrating CRUD operations and persistent data storage.
 
 ## 🏗️ Project Structure
+```text
 ├── index.html          # Main Portfolio Entry
 ├── css/
 │   └── style.css       # Custom Variable-based Design System
